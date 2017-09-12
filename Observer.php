@@ -50,7 +50,7 @@ class MessageFactory implements Observable
     private $status;
     public function add(Message $message)
     {
-        if(($key = array_search($message,$this->objs)) === false){
+        if(array_search($message,$this->objs) === false){
             $this->objs[] = $message;
         }
         // TODO: Implement add() method.
