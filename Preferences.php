@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
+ * 单例模式
  * User: lihui
  * Date: 2017/9/7
  * Time: 15:52
@@ -11,8 +11,9 @@ class Preferences
 
     private $props = [];
     private static $obj;
+    //私有化构造方法 不能实例化
     private function __construct(){}
-
+    //创建对象
     public static function createObj()
     {
         if(empty(self::$obj)) {

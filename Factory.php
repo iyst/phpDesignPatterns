@@ -4,13 +4,23 @@
  * User: lihui
  * Date: 2017/9/7
  * Time: 21:34
+ * 工厂模式
  */
 
+/**
+ * Interface payFactory
+ * 工厂接口方法
+ */
 interface  payFactory {
     static function aliPay();
     static function tencentPay();
     static function linePay();
 }
+
+/**
+ * Interface payFunc
+ * 支付的标准接口
+ */
 interface payFunc{
     public function pay();
     //public function callBack($price);
@@ -18,12 +28,12 @@ interface payFunc{
 
 class aliPayClass implements payFunc
 {
-    private $price;
-
-    public function __construct($price = 0)
-    {
-        $this->price =  $price;
-    }
+//    private $price;
+//
+//    public function __construct($price = 0)
+//    {
+//        $this->price =  $price;
+//    }
 
     public function pay()
     {
@@ -78,6 +88,13 @@ class payFactoryClass implements payFactory
         // TODO: Implement linePay() method.
         return new linePayClass();
     }
+
+//    public function pay(){
+//        switch (){
+//            case 1:
+//                break;
+//        }
+//    }
 }
 
 class Client
